@@ -1,21 +1,23 @@
-<h6>angular@{{ angularVersion }} | ngx-markdown@{{ ngxMarkdownVersion }}</h6>
-
-<br />
-
 <button (click)="load()">Load</button>
 
 <br />
-<!-- <textarea class="variable-textarea" [(ngModel)]="markdown"></textarea> -->
 
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-  <tr *ngFor="let resit of res">
-    <td (click)="choose(resit)" [ngClass]="{ active: resit.id == selected.id }">
-      <a [href]="resit.link">{{ resit.name }}</a>
-    </td>
-  </tr>
-</table>
+<div>
+  <table>
+    <tr>
+      <th>Name</th>
+    </tr>
+    <tr *ngFor="let resit of res">
+      <td
+        (click)="choose(resit)"
+        [ngClass]="{ active: resit.id == selected.id }"
+      >
+        <a [href]="resit.link">{{ resit.name }}</a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<textarea class="variable-textarea" [(ngModel)]="markdown"></textarea>
 
 <markdown class="variable-binding" [data]="markdown"></markdown>
