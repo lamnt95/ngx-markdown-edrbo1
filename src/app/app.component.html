@@ -1,6 +1,12 @@
-<h6>
-  angular@{{ angularVersion }} | ngx-markdown@{{ ngxMarkdownVersion }}
-</h6>
-<br>
+<h6>angular@{{ angularVersion }} | ngx-markdown@{{ ngxMarkdownVersion }}</h6>
+
+<br />
+
+<button (click)="load()">
+  <span *ngIf="!loading">Load</span>
+  <span *ngIf="loading">........</span>
+</button>
+
+<br />
 <textarea class="variable-textarea" [(ngModel)]="markdown"></textarea>
 <markdown class="variable-binding" [data]="markdown"></markdown>
